@@ -13,6 +13,9 @@
     rgb(70, 98, 176) 0%,
     rgb(15, 202, 202) 100%
   ) no-repeat;
-  height: 100vh;
+  height: 100%;
   text-align: center;
+ }
+ .title-app{
+  font-family: Bigelow Rules;
  }

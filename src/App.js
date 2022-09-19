@@ -1,7 +1,6 @@
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
 import SeachBox from "./components/search-box/search-box-component";
-import TextParagrathy from "./components/text-p/text-component-p";
 import "./App.css";
 
 class App extends Component {
@@ -41,13 +40,13 @@ class App extends Component {
     });
     return (
       <div className="App">
+      <h1 className="my-20 mb-12 text-7xl text-cyan-300 font-bold title-app">Monsters-Rolodex</h1>
         <SeachBox
         onChangeHandler={onSearchChange}
           placeholder="Seach Monster"
           className="monsters-seach-box"
         />
         <CardList monsters={monsterFilter} />
-        <TextParagrathy />
       </div>
     );
   }

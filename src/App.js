@@ -11,11 +11,11 @@ const App = () => {
       .then((response) => response.json())
       .then((users) => setMonsters(users));
   }, []);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/users")
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
@@ -33,7 +33,7 @@ const App = () => {
 
       <SeachBox
         onChangeHandler={onSearchChange}
-        placeholder="Seach Monster"
+        placeHolder="Seach Monster"
         className="monsters-seach-box"
       />
       <CardList monsters={monsterFilter} />

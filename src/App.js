@@ -6,24 +6,24 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
+  const [filterMonsters, setFilterMonsters] = useState(monsters);
+  console.log('render');
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => setMonsters(users));
   }, []);
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data));
-  // }, []);
+  useEffect(() => {
+    const filterMonsters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchField);
+    });
+    setFilterMonsters(filterMonsters)
+  }, [monsters, searchField]);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
     setSearchField(searchFieldString);
   };
-  const monsterFilter = monsters.filter((monster) => {
-    return monster.name.toLowerCase().includes(searchField);
-  });
 
   return (
     <div className="App">
@@ -36,7 +36,7 @@ const App = () => {
         placeHolder="Seach Monster"
         className="monsters-seach-box"
       />
-      <CardList monsters={monsterFilter} />
+      <CardList monsters={filterMonsters} />
     </div>
   );
 };

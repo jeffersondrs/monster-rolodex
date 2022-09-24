@@ -2,20 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
- body{
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI' 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(
-    to top,
-    rgb(70, 98, 176) 0%,
-    rgb(15, 202, 202) 100%
-  ) no-repeat;
-  height: 100%;
-  text-align: center;
- }
- .title-app{
-  font-family: Bigelow Rules;
- }
